@@ -1,9 +1,23 @@
+import java.util.Scanner;
+
 public class Main {
 	public static void main(String[] args) {
-		PhoneInfo info1 = new PhoneInfo("Hyuk", "000", "000000");
-		PhoneInfo info2 = new PhoneInfo("Hy", "111");
-		
-		info1.showPhoneInfo();
-		info2.showPhoneInfo();
+		while(true) {
+			GetInfo get = new GetInfo();
+			get.showMenu();
+			
+			Scanner sc = new Scanner(System.in);
+			int num = sc.nextInt();
+			
+			if(num==1) {
+				get.getMenu();
+			}
+			
+			else if(num==2)
+				break;
+			else {
+				System.out.println("Wrong Number");
+			}
+		}
 	}
-}
+}	
