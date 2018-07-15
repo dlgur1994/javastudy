@@ -8,6 +8,7 @@ public class Main {
 			
 			Scanner sc = new Scanner(System.in);
 			int num = sc.nextInt();
+			sc.nextLine();
 			
 			if(num==1) {
 				get.getMenu();
