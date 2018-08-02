@@ -18,11 +18,11 @@ class Apple {
 	}
 }
 
-class FruitBox <T> {
+class FruitBox<T> {
 	T item;
 	
-	public FruitBox <T> {
-		
+	public FruitBox(T item) {
+		this.item = item;
 	}
 	public void store(T item) {
 		this.item =item;
@@ -34,7 +34,7 @@ class FruitBox <T> {
 
 public class GenericConstructor {
 	public static void main(String[] args) {
-		FruitBox <Orange> orBox = new FruitBox<Orange>(new Orange(10));
+		FruitBox<Orange> orBox = new FruitBox<Orange>(new Orange(10));
 		Orange org = orBox.pullout();
 		org.showSugarContent();
 		
