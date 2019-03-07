@@ -2,38 +2,42 @@ import java.util.Scanner;
 
 public class MaxAndMin {
 	public static void main(String[] args) {
-		int[] arr = new int[5];
-		int min,max;
+		Scanner sc = new Scanner(System.in);
+		int[] arr = new int[10];
 		
-		Scanner sc= new Scanner(System.in);
-		System.out.print("정수 입력: ");
-		
-		for(int i=0 ; i<5; i++) {
+		for(int i=0 ; i<10 ; i++) {
 			arr[i] = sc.nextInt();
 		}
 		
-		min = minValue(arr);
-		max = maxValue(arr);
-		
-		System.out.println("최소값 : " + min);
-		System.out.println("최대값 : " + max);
+		System.out.println("Max value is " + maxValue(arr));
+		System.out.println("Min value is " + minValue(arr));
 	}
 	
 	public static int minValue(int[] arr) {
-		int min = arr[0];
+		int temp;
+		
 		for(int i=1 ; i<arr.length ; i++) {
-			if(arr[i] < min)
-				min = arr[i];
-		}		
-		return min;
+			if(arr[0]>arr[i]) {
+				temp = arr[i];
+				arr[i] = arr[0];
+				arr[0] = temp;
+			}
+		}
+		
+		return arr[0];
 	}
 	
 	public static int maxValue(int[] arr) {
-		int max = arr[0];
+		int temp;
+		
 		for(int i=1 ; i<arr.length ; i++) {
-			if(arr[i] > max)
-				max = arr[i];
-		}		
-		return max;
+			if(arr[0]<arr[i]) {
+				temp = arr[i];
+				arr[i] = arr[0];
+				arr[0] = temp;
+			}
+		}
+		
+		return arr[0];
 	}
 }
