@@ -1,6 +1,6 @@
 public class CheckExtend {
 	public static void main(String[] args) {
-		HybridWaterCar car = new HybridWaterCar(10, 20, 30);
+		HybridWaterCar car = new HybridWaterCar(10,20,30);
 		car.showCurrentGauge();
 	}
 }
@@ -15,7 +15,8 @@ class Car {
 
 class HybridCar extends Car {
 	int electricGauge;
-	public HybridCar (int gas, int elec) {
+	
+	public HybridCar(int gas, int elec) {
 		super(gas);
 		electricGauge = elec;
 	}
@@ -23,9 +24,10 @@ class HybridCar extends Car {
 
 class HybridWaterCar extends HybridCar {
 	int waterGauge;
-	public HybridWaterCar (int gas, int elec, int water) {
-		super(gas,elec);
-		waterGauge = water;
+	
+	public HybridWaterCar(int gas, int elec, int wat) {
+		super(gas, elec);
+		waterGauge = wat;
 	}
 	
 	public void showCurrentGauge() {
