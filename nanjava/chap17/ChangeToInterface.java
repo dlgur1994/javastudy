@@ -1,34 +1,38 @@
 interface TV {
 	public void onTV();
 }
-class TVImpl implements TV {
+
+interface Computer {
+	public void dataReceive();
+}
+
+class TVImpl {
 	public void onTV() {
 		System.out.println("영상 출력 중");
 	}
 }
 
-interface Computer {
-	public void dataReceive();
-}
-class ComputerImpl implements Computer {
+class ComputerImpl {
 	public void dataReceive() {
-		System.out.println("영상 데이터 수신 중" );
+		System.out.println("영상 데이터 수신 중");
 	}
 }
 
 class IPTV implements TV, Computer {
-	TVImpl tv = new TVImpl();
-	ComputerImpl com = new ComputerImpl();
+	TVImpl tvp = new TVImpl();
+	ComputerImpl comp = new ComputerImpl();
 	
 	public void onTV() {
-		tv.onTV();
+		System.out.println("영상 출력 중");
 	}
+	
 	public void dataReceive() {
-		com.dataReceive();
+		comp.dataReceive();
 	}
+	
 	public void powerOn() {
-		onTV();
 		dataReceive();
+		onTV();
 	}
 }
 
@@ -38,6 +42,6 @@ public class ChangeToInterface {
 		iptv.powerOn();
 		
 		TV tv = iptv;
-		Computer com = iptv;
+		Computer compy = iptv;
 	}
 }
